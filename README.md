@@ -1,1 +1,0 @@
-# github-card-color-customizer-chrome-extension

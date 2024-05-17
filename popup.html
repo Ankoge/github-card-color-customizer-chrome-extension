@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Issue colors</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 20px;
+        padding-top: 10px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .color-picker {
+        margin-bottom: 10px;
+      }
+      .color-picker label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .color-picker input[type="color"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Issue colors</h1>
+      <div class="color-picker">
+        <label for="issue-color">General Color:</label>
+        <input type="color" id="issue-color" value="#ff0000" />
+      </div>
+      <div class="color-picker">
+        <label for="parents-color">Story Color:</label>
+        <input type="color" id="parents-color" value="#0000ff" />
+      </div>
+      <div class="color-picker">
+        <label for="children-color">Subtask Color:</label>
+        <input type="color" id="children-color" value="#00ff00" />
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
