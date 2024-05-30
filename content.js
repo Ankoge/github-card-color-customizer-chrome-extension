@@ -2,27 +2,26 @@ function applyCustomColors() {
   chrome.storage.sync.get(
     ["issueColor", "childrenColor", "parentsColor"],
     function (result) {
-      const issueColor = result.issueColor || "#ff0000";
-      const childrenColor = result.childrenColor || "#00ff00";
-      const parentsColor = result.parentsColor || "#0000ff";
+      const issueColor = result.issueColor || "#82e8cf";
+      const childrenColor = result.childrenColor || "#f9c976";
+      const parentsColor = result.parentsColor || "#ff6b6b";
 
-      const issueElements = document.querySelectorAll(".fHtcQR");
+      const issueElements = document.querySelectorAll(
+        'div[data-testid^="board-view-column-card"] > :first-child'
+      );
       issueElements.forEach(function (issueElement) {
         issueElement.style.backgroundColor = issueColor;
       });
 
-      const childIssueElements = document.querySelectorAll(
-        'div.fHtcQR:has([data-testid^="tracked-by-label"])'
+      const childIssueElements = Array.from(issueElements).filter((el) =>
+        el.querySelector('[data-testid^="tracked-by-label"]')
       );
       childIssueElements.forEach(function (childIssueElement) {
         childIssueElement.style.backgroundColor = childrenColor;
       });
-
-      const parentIssueElements = Array.from(
-        document.querySelectorAll(
-          "div.fHtcQR:has(.VisuallyHidden-sc-d280cbd7-0.bcxNXA)"
-        )
-      ).filter((el) => el.textContent.includes("Size"));
+      const parentIssueElements = Array.from(issueElements).filter((el) =>
+        el.textContent.includes("Size")
+      );
       parentIssueElements.forEach(function (parentIssueElement) {
         parentIssueElement.style.backgroundColor = parentsColor;
       });

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "My GitHub Issue Color Customizer",
-  "version": "1.0",
-  "description": "A chrome extension that allows you to customize the colors of GitHub issues. Three issue type aviailable: issues (general issues), stories (issues with size), subtasks (issues related to other issue).",
+  "version": "1.1",
+  "description": "A chrome extension that allows you to customize the colors of GitHub issues.",
   "icons": {
     "128": "icon.png"
   },
