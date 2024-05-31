@@ -41,8 +41,8 @@ const observer = new MutationObserver(function (mutations) {
   });
 });
 
-// Configure the observer to watch for changes in the issue list
-const issueList = document.querySelector(".hfaKjg");
+// Configure the observer to watch for changes in the issue board
+const issueList = document.querySelector('div[data-testid^="board-view"]');
 if (issueList) {
   observer.observe(issueList, { childList: true, subtree: true });
 }
